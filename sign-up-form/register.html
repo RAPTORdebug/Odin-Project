@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <form class="info">
+      <div class="form-content">
+        <h2>Create Account</h2>
+        <p>Please enter your details</p>
+
+        <label for="user_name">Username</label>
+        <input type="text" id="user_name" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="check" name="remember">
+          <label for="check">Remember Me</label>
+        </div>
+
+        <button type="submit">Register</button>
+        <button type="button" onclick="window.open('https://www.google.com', '_blank')">
+          🌐 Register with Google
+        </button>
+      </div>
+
+      <figure class="form-image">
+        <img src="img.webp" alt="Login Illustration" class="main-image"/>
+        <img src="odin-lined.png" alt="Logo" class="logo-caption">
+        <figcaption>Image by Sihath</figcaption>
+      </figure>
+    </form>
+  </div>
+</body>
+</html>

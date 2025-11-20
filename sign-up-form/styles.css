@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+/* Form container */
+.info {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  max-width: 90%;
+  height: 500px; /* Fixed height so image and form align */
+}
+
+/* Left side: form inputs and buttons */
+.form-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 20px;
+  overflow-y: auto; /* Scroll if content too tall */
+}
+
+.form-content input,
+.form-content button,
+.form-content select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-content input:invalid{
+  border-color: red;
+}
+
+.form-content input:valid{
+  border-color: green;
+}
+
+.form-content button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form-content button:hover {
+  background: #45a049;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Right side: image container */
+.form-image {
+  flex: 1;
+  height: 100%; /* Match form height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Image styles */
+.form-image img.main-image{
+  height: 100%; /* Match container height */
+  width: 100%;  
+  border-radius: 10px;
+  object-fit: cover; /* Fill container, crop if needed */
+}
+
+/* Overlay caption on the image */
+.form-image figcaption {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+/* Overlay image caption on the image */
+.logo-caption {
+  position: absolute; 
+  width: 80px;  
+  height: auto; 
+  opacity: 0.8;
+}
+
