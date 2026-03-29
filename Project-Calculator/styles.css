@@ -1,54 +1,127 @@
-
 html, body {
   height: 100%;
   margin: 0;
-}
-.head{
-  text-align: center;
-}
-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2e2c3a, #1f1a24);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #706766;
 }
 
+/* Calculator container */
 .calculator {
-    width: 280px;
-    height: auto;
-    margin: 20px auto;
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
-    overflow: hidden;
-    padding: 20px;
+  width: 320px;
+  background: rgba(50, 50, 60, 0.9);
+  border-radius: 25px;
+  padding: 15px; /* Reduced padding for perfect alignment */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box; /* ensures padding doesn't break width */
 }
 
+/* Header */
+.head {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Display */
 #display {
-    width: 100%;
-    height: 50px;
-    text-align: left;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    border: none;
-    background-color: hsl(0, 0%, 20%);
-    border-radius: 15px;
-    color: white;
+  width: 100%;
+  height: 60px;
+  font-size: 1.7em;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background: rgba(30, 30, 40, 0.8);
+  color: #fff;
+  margin-bottom: 15px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
+/* Button grid */
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-    border: 2px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Slightly smaller gap for better alignment */
 }
 
+/* Buttons common style */
 button {
-    height: 50px;
-    font-size: 1.1em;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-    border: none;
+  width: 100%; /* ensures buttons stretch fully to grid edges */
+  padding: 18px 0;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  box-sizing: border-box;
 }
 
+/* Hover effect */
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Button types */
+.btn {
+  background: rgba(70, 70, 80, 0.9);
+}
+
+.btn.operator {
+  background: #ff9500;
+  color: #fff;
+}
+
+.btn.function {
+  background: #ff3b30;
+}
+
+.btn.equals {
+  background: #34c759;
+}
+
+/* Zero button spans 2 columns */
+.btn.zero {
+  grid-column: span 2;
+}
+
+/* Optional: Responsive for smaller screens */
+@media screen and (max-width: 360px) {
+  .calculator {
+    width: 90%;
+    padding: 10px;
+  }
+  #display {
+    font-size: 1.5em;
+    height: 50px;
+  }
+  button {
+    font-size: 1.1em;
+    padding: 14px 0;
+  }
+}
+
+/* Copyright Bar */
+.copyright-bar {
+  position: fixed; /* sticks to bottom of page */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(40, 40, 50, 0.9);
+  color: #ccc;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000; /* stay on top */
+}
